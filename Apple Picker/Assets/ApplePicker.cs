@@ -14,7 +14,7 @@ public class ApplePicker : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-		// Creates baskets spaced apart
+        // Creates baskets spaced apart
         for (int i = 0; i < numBaskets; i++)
         {
             GameObject tBasketGO = Instantiate<GameObject>(basketPrefab);
@@ -28,5 +28,15 @@ public class ApplePicker : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void AppleDestroyed()
+    {
+        // Destroy all of the falling apples
+        GameObject[] tAppleArray = GameObject.FindGameObjectsWithTag("Apple");
+        foreach (GameObject tGO in tAppleArray)
+        {
+            Destroy(tGO);
+        }
     }
 }
