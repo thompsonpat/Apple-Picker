@@ -189,9 +189,10 @@ GameObject:
   - component: {fileID: 534669905}
   - component: {fileID: 534669904}
   - component: {fileID: 534669903}
+  - component: {fileID: 534669906}
   m_Layer: 0
   m_Name: Main Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -256,6 +257,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &534669906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be189a15a62cc8d41830fa45e3fb210d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  basketPrefab: {fileID: 1837005688642476, guid: 9d0a70a5d820b2448a063cc07ec34f17,
+    type: 2}
+  numBaskets: 3
+  basketBottomY: -14
+  basketSpacingY: 2
 --- !u!1001 &1590588124
 Prefab:
   m_ObjectHideFlags: 0
@@ -309,6 +326,17 @@ Prefab:
         type: 2}
       propertyPath: chanceToChangeDirections
       value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 114419800338475188, guid: e5e893d6b0ad333409bcca84307e6a70,
+        type: 2}
+      propertyPath: applePrefab
+      value: 
+      objectReference: {fileID: 1488634071362840, guid: 7a38fa7fa18ccc64faae610075637111,
+        type: 2}
+    - target: {fileID: 54668085404061282, guid: e5e893d6b0ad333409bcca84307e6a70,
+        type: 2}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5e893d6b0ad333409bcca84307e6a70, type: 2}
