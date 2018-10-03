@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AppleTree : MonoBehaviour
 {
@@ -20,11 +21,21 @@ public class AppleTree : MonoBehaviour
     // Rate at which Apples will be instantiated
     public float secondsBetweenAppleDrops = 1f;
 
+    [Header("Set Dynamically")]
+    public Text scoreGT;
+    // Track how many apples have been dropped
+    public int applesDropped = 0;
+
     // Use this for initialization
     void Start()
     {
         // Dropping apples every second
         Invoke("DropApple", 2f);
+
+        // Find a reference to the ScoreCounter GameObject
+        GameObject scoreGO = GameObject.Find("ScoreCounter");
+        // Get the Text Component of that GameObject
+        scoreGT = scoreGO.GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -58,7 +69,15 @@ public class AppleTree : MonoBehaviour
     void DropApple()
     {
         GameObject apple = Instantiate<GameObject>(applePrefab);
+        int score = int.Parse(scoreGT.text);
+        var appleScript = apple.GetComponent<Apple>();
+        if (applesDropped % 3 == 0 && applesDropped > 5)
+        {
+            apple.gameObject.tag = "FastApple";
+            appleScript.thrust = score / 200;
+        }
 		apple.transform.position = transform.position;
 		Invoke("DropApple", secondsBetweenAppleDrops);
+        applesDropped++;
     }
 }
