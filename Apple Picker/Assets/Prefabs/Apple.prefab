@@ -112,6 +112,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c889adc1a4baba54bbdd2c907789ddf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thrust: 0
+  rb: {fileID: 0}
+  fastAppleMaterial: {fileID: 2100000, guid: ff49dca31200bcc48bcdf6f8b100bcf7, type: 2}
 --- !u!135 &135514768419622772
 SphereCollider:
   m_ObjectHideFlags: 1

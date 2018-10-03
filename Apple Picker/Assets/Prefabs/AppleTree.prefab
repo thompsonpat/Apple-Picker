@@ -220,6 +220,8 @@ MonoBehaviour:
   leftAndRightEdge: 10
   chanceToChangeDirections: 0.1
   secondsBetweenAppleDrops: 1
+  scoreGT: {fileID: 0}
+  applesDropped: 0
 --- !u!135 &135521132156123778
 SphereCollider:
   m_ObjectHideFlags: 1
